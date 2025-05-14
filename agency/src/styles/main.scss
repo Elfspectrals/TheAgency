@@ -1,0 +1,18 @@
+@use './variables';
+@use './functions';
+@use './mixins';
+@use './utilities';
+@use './colors';
+@use './sizes';
+@use './borders';
+
+/* Exemple global */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+// Use the color of colors.scss for the body background
+body {
+  background-color: colors.$primary;
+}
