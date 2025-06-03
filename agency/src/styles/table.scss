@@ -4,6 +4,7 @@
   border-collapse: collapse;
   font-size: 0.95rem;
   table-layout: fixed;          /* force la pleine largeur */
+  background: var(--clr-bg);     // Use current theme background
 
   thead {
     background: var(--clr-surface);
@@ -17,6 +18,42 @@
     overflow: hidden;           /* utile avec table-layout: fixed */
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: var(--clr-text);     // Set theme text color for readability in dark mode
+  }
+
+  tr:hover {
+    background: rgba(var(--clr-primary), 0.05);
+  }
+}
+
+/* helpers (optionnels) -------------------------------------------*/
+.width-container {
+  width: 100%;
+  margin-inline: auto;
+}
+.width-full { width: 100%; }
+.width-auto { width: auto; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  table-layout: fixed;          /* force la pleine largeur */
+  background: var(--clr-bg);     // Use current theme background
+
+  thead {
+    background: var(--clr-surface);
+    color: var(--clr-text);
+  }
+
+  th,
+  td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid rgba(#000, 0.1);
+    overflow: hidden;           /* utile avec table-layout: fixed */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--clr-text);     // Set theme text color for readability in dark mode
   }
 
   tr:hover {
