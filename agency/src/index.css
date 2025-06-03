@@ -1,11 +1,78 @@
-/* Exemple global */
-body {
-  margin: 0;
-  font-family: sans-serif;
+@charset "UTF-8";
+.titleColor {
+  color: #DC2626;
+  background-color: #424244;
+}
+
+:root {
+  /* Light palette – peut venir de _colors.scss ou _variables.scss */
+  --clr-bg: #ffffff;
+  --clr-surface: #424244;
+  --clr-text: #18181B;
+  --clr-primary: #DC2626;
+}
+
+[data-theme=dark] {
+  --clr-bg: #18181B;
+  --clr-surface: #242429;
+  --clr-text: #f1f1f1;
+  --clr-primary: #DC2626;
+}
+
+.bg-surface {
+  background-color: var(--clr-surface);
+}
+
+.text-primary {
+  color: var(--clr-primary);
+}
+
+.header {
+  background: var(--clr-surface);
+  color: var(--clr-text);
+  padding: clamp(0.75rem, 2vw, 1.25rem) 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+.header__container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.header__logo {
+  color: var(--clr-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+.header__logo:hover, .header__logo:focus {
+  text-decoration: underline;
+}
+.header__nav {
+  display: flex;
+  gap: 1rem;
+}
+.header__nav-link {
+  color: inherit;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+.header__nav-link.--active, .header__nav-link:hover {
+  color: var(--clr-primary);
+}
+.header__toggle {
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+  color: var(--clr-primary);
+}
+.header__toggle:focus-visible {
+  outline: 2px dashed var(--clr-primary);
 }
 
 body {
-  background-color: #007bff;
+  margin: 0;
+  font-family: sans-serif;
 }
 
 /*# sourceMappingURL=index.css.map */

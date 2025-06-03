@@ -1,0 +1,19 @@
+@use './colors' as *;
+
+:root {
+  /* Light palette – peut venir de _colors.scss ou _variables.scss */
+  --clr-bg: #ffffff;
+  --clr-surface: #{ $greyBGLight }; // variable provided by colors
+  --clr-text: #18181B;
+  --clr-primary: #{ $redHitman };   // variable provided by colors
+}
+
+[data-theme='dark'] {
+  --clr-bg: #{ $greyBGDark };
+  --clr-surface: #242429;
+  --clr-text: #f1f1f1;
+  --clr-primary: #{ $redHitman };   // conserve the accent rouge
+}
+
+.bg-surface   { background-color: var(--clr-surface); }
+.text-primary { color: var(--clr-primary); }
