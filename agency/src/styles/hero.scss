@@ -1,0 +1,30 @@
+/* src/scss/_hero.scss */
+.hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: var(--clr-text);
+  text-align: center;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(#000, .45);
+    backdrop-filter: blur(2px);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-width: 46rem;
+    padding: 2rem 1rem;
+  }
+
+  &__title  { font-size: clamp(2rem, 5vw, 3rem); }
+  &__subtitle { margin: 1rem 0 2rem; line-height: 1.5; }
+  &__actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+}

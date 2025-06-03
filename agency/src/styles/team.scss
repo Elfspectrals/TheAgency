@@ -1,0 +1,29 @@
+/* src/scss/_team.scss */
+.team {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.team__grid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.team__item {
+  background: var(--clr-surface);
+  border: none;
+  padding: 1.25rem 1rem;
+  border-radius: .75rem;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(#000,.15); }
+}
+
+.team__name { margin-top: .75rem; font-weight: 600; }
+.team__role { font-size: .85rem; color: var(--clr-primary); margin-top: .25rem; }
