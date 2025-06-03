@@ -1,0 +1,18 @@
+/* src/scss/_stat-badges.scss */
+.stats {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(8rem,1fr));
+  margin: 2rem 0;
+}
+
+.stats__card {
+  background: var(--clr-surface);
+  padding: 1rem;
+  border-radius: .65rem;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(#000,.08);
+}
+
+.stats__value { font-size: 1.5rem; font-weight: 700; color: var(--clr-primary); }
+.stats__label { font-size: .85rem; color: var(--clr-text); }

@@ -1,0 +1,16 @@
+.intel-hero {
+  position: relative;
+  min-height: 45vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--clr-text);
+
+  &__overlay { inset: 0; position: absolute; background: rgba(#000,.5); }
+  &__container { position: relative; z-index: 1; padding: 2rem 1rem; }
+  &__title { font-size: clamp(2.1rem, 5vw, 3.3rem); }
+  &__subtitle { margin: 1rem 0 2rem; line-height: 1.4; }
+}

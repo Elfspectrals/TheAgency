@@ -5,6 +5,7 @@ import Home from './Home';
 import Header from './Header'; // make sure this import is correct
 import './index.css';
 import AboutUs from './About';
+import GatherIntelligence from './GatherIntelligence';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/hitman" element={<Hitman />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/intel" element={<GatherIntelligence />} />
       </Routes>
     </>
   );

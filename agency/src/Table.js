@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Button, { ButtonVariants } from './Button';
 import Location from './Location';
-import Avatar from './styles/Avatar';
+import Avatar from './Avatar';
 import Modal from './Modal';
 
 const Table = ({ data = [] }) => {

@@ -1,0 +1,17 @@
+/* src/scss/_filter-bar.scss */
+.filter {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+
+  input,
+  select {
+    padding: .45rem .75rem;
+    border: 1px solid rgba(#000,.2);
+    border-radius: .4rem;
+    background: var(--clr-surface);
+    color: var(--clr-text);
+    font: inherit;
+  }
+}
