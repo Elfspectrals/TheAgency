@@ -1,49 +1,146 @@
-// _header.scss 
+@use './colors' as *;
+@use './mixins'  as *;
+
+/* ------------------------------------------------------------------
+   TOKENS ------------------------------------------------------------------ */
+:root {
+  --clr-bg: #ffffff;
+  --clr-surface: #{$greyBGLight};
+  --clr-text: #18181B;
+  --clr-primary: #{$redHitman};
+}
+html[data-theme='dark'] {
+  --clr-bg: #{$greyBGDark};
+  --clr-surface: #242429;
+  --clr-text: #f1f1f1;
+  --clr-primary: #{$redHitman};
+}
+
+/* ------------------------------------------------------------------
+   HEADER ------------------------------------------------------------------ */
 .header {
+  position: relative;
   background: var(--clr-surface);
   color: var(--clr-text);
   padding: clamp(0.75rem, 2vw, 1.25rem) 1rem;
   box-shadow: 0 1px 3px rgba(#000, .15);
+  transition: background .3s;
+
+  /* Sticky option (juste ajouter data-sticky au <header>) */
+  &[data-sticky] {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(6px);
+  }
 
   &__container {
+    @include flex-between;
     max-width: 1200px;
     margin-inline: auto;
   }
 
+  /* -------- Logo -------- */
   &__logo {
     color: var(--clr-primary);
     font-weight: 700;
     text-decoration: none;
+    font-size: 1.125rem;
 
     &:hover,
     &:focus { text-decoration: underline; }
   }
 
+  /* -------- Nav -------- */
   &__nav {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
+    align-items: center;
+
+    /* Burger state */
+    @media (max-width: 48rem) {
+      /* hors-canvas */
+      position: fixed;
+      inset: 0 0 auto auto;
+      top: 0;
+      height: 100vh;
+      width: min(75vw, 18rem);
+      flex-direction: column;
+      padding: 5rem 1.25rem 2rem;
+      background: var(--clr-surface);
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+
+      &[data-open='true'] {
+        transform: translateX(0);
+      }
+    }
 
     &-link {
       color: inherit;
       font-size: 1rem;
       text-decoration: none;
       position: relative;
+      transition: color .2s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -0.2em;
+        width: 100%;
+        height: 2px;
+        background: var(--clr-primary);
+        scale: 0 1;
+        transform-origin: left;
+        transition: scale .2s;
+      }
 
       &.--active,
       &:hover {
         color: var(--clr-primary);
+
+        &::after { scale: 1 1; }
       }
     }
+  }
+
+  /* -------- Right actions -------- */
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
   }
 
   &__toggle {
     border: none;
     background: transparent;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     cursor: pointer;
     line-height: 1;
     color: var(--clr-primary);
+    transition: transform .2s;
 
-    &:focus-visible { outline: 2px dashed var(--clr-primary); }
+    &:hover { transform: scale(1.1); }
+  }
+
+  /* Burger visible mobile uniquement */
+  &__burger {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--clr-primary);
+
+    @media (max-width: 48rem) { display: block; }
+  }
+
+  /* -------- Backdrop -------- */
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(#000, .45);
+    backdrop-filter: blur(2px);
+    z-index: 40;
   }
 }

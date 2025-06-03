@@ -1,0 +1,78 @@
+@use './colors' as *;
+
+/* ------------------------------------------------------------------
+   DROPDOWN --------------------------------------------------------- */
+.dropdown {
+  position: relative;
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    padding: .25rem;
+
+    .dropdown__chevron {
+      transition: transform .25s;
+    }
+    &[aria-expanded='true'] .dropdown__chevron {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + .5rem);
+    min-width: 11rem;
+    list-style: none;
+    margin: 0;
+    padding: .5rem 0;
+    border-radius: .5rem;
+    background: var(--clr-surface);
+    box-shadow: 0 6px 18px rgba(#000, .25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    transition: opacity .25s, transform .25s;
+
+    &[data-open='true'] {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Mobile : prend la largeur totale du panneau latéral */
+    @media (max-width: 48rem) {
+      position: static;
+      width: 100%;
+      box-shadow: none;
+      background: transparent;
+      padding-left: 1rem;
+    }
+  }
+
+  &__item {
+    @media (max-width: 48rem) { margin-block: .25rem; }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    padding: .35rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+    transition: background .15s;
+
+    &:hover,
+    &:focus {
+      background: rgba(var(--clr-primary), .08);   /* léger survol */
+      color: var(--clr-primary);
+    }
+  }
+}

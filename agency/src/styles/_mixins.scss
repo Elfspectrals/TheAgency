@@ -1,1 +1,8 @@
 // mixing.scss
+@use 'sass:math';
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
