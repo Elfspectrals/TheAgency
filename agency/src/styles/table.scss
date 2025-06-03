@@ -1,20 +1,26 @@
+/* ------------------------------------------------------------------
+   TABLE (s’appuie sur les tokens du thème) ------------------------ */
 .table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
+  table-layout: fixed;               // force la pleine largeur
 
   thead {
-    background: var(--clr-surface);
+    background: var(--clr-surface);  // header = surface
     color: var(--clr-text);
   }
 
   th,
   td {
     padding: 0.65rem 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(#000, 0.08);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   tr:hover {
-    background: var(--clr-table-hover);
+    background: var(--clr-table-hover);  // teinte déclarée dans le thème
   }
 }

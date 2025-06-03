@@ -264,10 +264,13 @@ html[data-theme=dark] {
   color: var(--clr-primary);
 }
 
+/* ------------------------------------------------------------------
+   TABLE (s’appuie sur les tokens du thème) ------------------------ */
 .table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
+  table-layout: fixed;
 }
 .table thead {
   background: var(--clr-surface);
@@ -276,7 +279,10 @@ html[data-theme=dark] {
 .table th,
 .table td {
   padding: 0.65rem 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .table tr:hover {
   background: var(--clr-table-hover);
@@ -344,6 +350,246 @@ html[data-theme=dark] {
 }
 .location__icon {
   color: var(--clr-location-icon);
+}
+
+.width-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
+}
+
+/* src/scss/_modal.scss  (importe dans main.scss) */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+}
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 32rem);
+  background: var(--clr-surface);
+  padding: 2rem 1.75rem 2.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  color: var(--clr-text);
+}
+.modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--clr-text);
+}
+
+/* src/scss/_hero.scss */
+.hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: var(--clr-text);
+  text-align: center;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+.hero__container {
+  position: relative;
+  z-index: 1;
+  max-width: 46rem;
+  padding: 2rem 1rem;
+}
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+.hero__subtitle {
+  margin: 1rem 0 2rem;
+  line-height: 1.5;
+}
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* src/scss/_mission-cards.scss */
+.mission__grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  padding: 2rem 0;
+}
+
+.mission__card {
+  background: var(--clr-surface);
+  padding: 1.75rem 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.mission__icon {
+  color: var(--clr-primary);
+  margin-bottom: 0.75rem;
+}
+
+.mission__title {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.mission__text {
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+/* src/scss/_team.scss */
+.team {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.team__grid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.team__item {
+  background: var(--clr-surface);
+  border: none;
+  padding: 1.25rem 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.team__name {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.team__role {
+  font-size: 0.85rem;
+  color: var(--clr-primary);
+  margin-top: 0.25rem;
+}
+
+/* src/scss/_timeline.scss */
+.timeline-section {
+  padding: 3rem 0;
+}
+
+.timeline {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 44rem;
+  padding-left: 1rem;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--clr-primary);
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2.5rem;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -0.15rem;
+  top: 0.3rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--clr-primary);
+  border-radius: 50%;
+}
+
+.timeline__year {
+  margin: 0;
+  color: var(--clr-primary);
+}
+
+.timeline__label {
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* src/scss/_quote-slider.scss */
+.quote {
+  padding: 3rem 0;
+  overflow: hidden;
+}
+
+.quote__track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.quote__track::-webkit-scrollbar {
+  display: none;
+}
+
+.quote__slide {
+  scroll-snap-align: center;
+  flex: 0 0 90%;
+  max-width: 32rem;
+  margin-inline: auto;
+  background: var(--clr-surface);
+  padding: 2rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+.quote__slide blockquote {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+.quote__slide .quote__author span {
+  color: var(--clr-primary);
 }
 
 body {

@@ -1,0 +1,30 @@
+/* src/scss/_quote-slider.scss */
+.quote {
+  padding: 3rem 0;
+  overflow: hidden;
+}
+
+.quote__track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  &::-webkit-scrollbar { display: none; }
+}
+
+.quote__slide {
+  scroll-snap-align: center;
+  flex: 0 0 90%;
+  max-width: 32rem;
+  margin-inline: auto;
+  background: var(--clr-surface);
+  padding: 2rem 1.5rem;
+  border-radius: .75rem;
+  box-shadow: 0 4px 12px rgba(#000, .12);
+  text-align: center;
+
+  blockquote { font-size: 1.1rem; line-height: 1.5; margin: 0 0 1rem; }
+  .quote__author span { color: var(--clr-primary); }
+}

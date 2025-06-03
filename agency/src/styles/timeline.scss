@@ -1,0 +1,38 @@
+/* src/scss/_timeline.scss */
+.timeline-section { padding: 3rem 0; }
+
+.timeline {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 44rem;
+  padding-left: 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: .5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--clr-primary);
+  }
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2.5rem;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -.15rem;
+  top: .3rem;
+  width: .75rem;
+  height: .75rem;
+  background: var(--clr-primary);
+  border-radius: 50%;
+}
+
+.timeline__year  { margin: 0; color: var(--clr-primary); }
+.timeline__label { margin: .25rem 0 .5rem; }

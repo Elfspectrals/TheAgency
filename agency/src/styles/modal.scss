@@ -1,0 +1,38 @@
+/* src/scss/_modal.scss  (importe dans main.scss) */
+@use './colors' as *;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(#000, .55);
+    backdrop-filter: blur(2px);
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(92vw, 32rem);
+    background: var(--clr-surface);
+    padding: 2rem 1.75rem 2.25rem;
+    border-radius: .75rem;
+    box-shadow: 0 12px 32px rgba(#000, .35);
+    color: var(--clr-text);
+  }
+
+  &__close {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-text);
+  }
+}
