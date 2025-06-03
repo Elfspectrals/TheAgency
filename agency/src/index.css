@@ -264,10 +264,12 @@ html[data-theme=dark] {
   color: var(--clr-primary);
 }
 
+/* src/scss/_table.scss */
 .table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
+  table-layout: fixed; /* force la pleine largeur */
 }
 .table thead {
   background: var(--clr-surface);
@@ -277,9 +279,26 @@ html[data-theme=dark] {
 .table td {
   padding: 0.65rem 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* utile avec table-layout: fixed */
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .table tr:hover {
-  background: var(--clr-table-hover);
+  background: rgba(var(--clr-primary), 0.05);
+}
+
+/* helpers (optionnels) -------------------------------------------*/
+.width-container {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
 }
 
 .avatar {
@@ -344,6 +363,19 @@ html[data-theme=dark] {
 }
 .location__icon {
   color: var(--clr-location-icon);
+}
+
+.width-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
 }
 
 body {
