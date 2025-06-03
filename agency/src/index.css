@@ -264,13 +264,13 @@ html[data-theme=dark] {
   color: var(--clr-primary);
 }
 
-/* src/scss/_table.scss */
+/* ------------------------------------------------------------------
+   TABLE (s’appuie sur les tokens du thème) ------------------------ */
 .table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.95rem;
-  table-layout: fixed; /* force la pleine largeur */
-  background: var(--clr-bg);
+  table-layout: fixed;
 }
 .table thead {
   background: var(--clr-surface);
@@ -279,66 +279,13 @@ html[data-theme=dark] {
 .table th,
 .table td {
   padding: 0.65rem 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* utile avec table-layout: fixed */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--clr-text);
 }
 .table tr:hover {
-  background: rgba(var(--clr-primary), 0.05);
-}
-
-/* helpers (optionnels) -------------------------------------------*/
-.width-container {
-  width: 100%;
-  margin-inline: auto;
-}
-
-.width-full {
-  width: 100%;
-}
-
-.width-auto {
-  width: auto;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95rem;
-  table-layout: fixed; /* force la pleine largeur */
-  background: var(--clr-bg);
-}
-.table thead {
-  background: var(--clr-surface);
-  color: var(--clr-text);
-}
-.table th,
-.table td {
-  padding: 0.65rem 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* utile avec table-layout: fixed */
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: var(--clr-text);
-}
-.table tr:hover {
-  background: rgba(var(--clr-primary), 0.05);
-}
-
-/* helpers (optionnels) -------------------------------------------*/
-.width-container {
-  width: 100%;
-  margin-inline: auto;
-}
-
-.width-full {
-  width: 100%;
-}
-
-.width-auto {
-  width: auto;
+  background: var(--clr-table-hover);
 }
 
 .avatar {
@@ -416,6 +363,40 @@ html[data-theme=dark] {
 
 .width-auto {
   width: auto;
+}
+
+/* src/scss/_modal.scss  (importe dans main.scss) */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+}
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 32rem);
+  background: var(--clr-surface);
+  padding: 2rem 1.75rem 2.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  color: var(--clr-text);
+}
+.modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--clr-text);
 }
 
 body {

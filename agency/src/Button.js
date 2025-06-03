@@ -5,6 +5,7 @@ export const ButtonVariants = {
     WARNING: 'btn--warning',
     HIRE: 'btn--hire',
     XXXXX: 'btn--xxxxx',
+    
 };
 
 const Button = ({ text = 'Click', onClick, variant = ButtonVariants.PRIMARY }) => (
