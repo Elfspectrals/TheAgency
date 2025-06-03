@@ -1,0 +1,12 @@
+/* src/scss/_contact-cta.scss */
+.cta {
+  background: var(--clr-primary);
+  color: var(--clr-bg);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  .btn { box-shadow: 0 3px 8px rgba(#000,.25); }
+}

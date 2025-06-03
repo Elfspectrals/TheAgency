@@ -1,6 +1,6 @@
 // src/components/TeamGrid.jsx
 import React, { useState } from 'react';
-import Avatar from './styles/Avatar';
+import Avatar from './Avatar';
 import Modal from './Modal';
 
 const TeamGrid = ({ members = [] }) => {

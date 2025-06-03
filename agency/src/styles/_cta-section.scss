@@ -1,0 +1,12 @@
+.home-cta {
+  background: var(--clr-primary);
+  color: var(--clr-bg);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+
+  .btn { box-shadow: 0 3px 8px rgba(#000,.25); }
+}

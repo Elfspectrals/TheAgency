@@ -1,0 +1,30 @@
+.svc {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.svc__grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));
+  margin-top: 2rem;
+}
+
+.svc__card {
+  background: var(--clr-surface);
+  padding: 2rem 1.5rem;
+  border-radius: .75rem;
+  box-shadow: 0 4px 12px rgba(#000,.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--clr-text);
+  transition: transform .2s, box-shadow .2s;
+
+  &:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(#000,.15); }
+}
+
+.svc__icon  { color: var(--clr-primary); }
+.svc__label { font-weight: 600; }
