@@ -688,6 +688,232 @@ html[data-theme=dark] {
   color: #7f1d1d;
 }
 
+/* src/scss/_bodyguard-hero.scss */
+.bg-hero {
+  position: relative;
+  min-height: 45vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--clr-text);
+}
+.bg-hero__overlay {
+  inset: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+.bg-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;
+}
+.bg-hero__title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+.bg-hero__subtitle {
+  margin: 1rem 0 2rem;
+  line-height: 1.4;
+  max-width: 40rem;
+}
+
+/* src/scss/_package-cards.scss */
+.pkg {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.pkg__grid {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.pkg__card {
+  background: var(--clr-surface);
+  padding: 1.75rem 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pkg__tier {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.pkg__price {
+  color: var(--clr-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pkg__perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.pkg__perks li {
+  margin-bottom: 0.4rem;
+}
+
+/* src/scss/_guard-carousel.scss */
+.gcarousel {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.gcarousel__track {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.gcarousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.gcard {
+  flex: 0 0 60%;
+  max-width: 14rem;
+  scroll-snap-align: center;
+  background: var(--clr-surface);
+  padding: 1.5rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.gcard__name {
+  font-weight: 600;
+}
+
+/* src/scss/_contact-cta.scss */
+.cta {
+  background: var(--clr-primary);
+  color: var(--clr-bg);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+.cta .btn {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.home-hero {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  color: var(--clr-text);
+}
+.home-hero__overlay {
+  inset: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+.home-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 1rem;
+}
+.home-hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 1px;
+}
+.home-hero__subtitle {
+  margin: 1rem 0 2rem;
+  line-height: 1.4;
+  max-width: 40rem;
+}
+
+.svc {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.svc__grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  margin-top: 2rem;
+}
+
+.svc__card {
+  background: var(--clr-surface);
+  padding: 2rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--clr-text);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.svc__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.svc__icon {
+  color: var(--clr-primary);
+}
+
+.svc__label {
+  font-weight: 600;
+}
+
+.t-slider {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.t-slider__heading {
+  margin-bottom: 2rem;
+}
+
+.home-cta {
+  background: var(--clr-primary);
+  color: var(--clr-bg);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+.home-cta .btn {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
 body {
   margin: 0;
   font-family: sans-serif;

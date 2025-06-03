@@ -1,0 +1,34 @@
+/* src/scss/_guard-carousel.scss */
+.gcarousel {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.gcarousel__track {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{display:none;}
+}
+
+.gcard {
+  flex: 0 0 60%;
+  max-width: 14rem;
+  scroll-snap-align: center;
+  background: var(--clr-surface);
+  padding: 1.5rem 1rem;
+  border-radius: .75rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  &:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(#000,.15);}
+}
+
+.gcard__name { font-weight: 600; }
