@@ -7,6 +7,9 @@ import './index.css';
 import AboutUs from './About';
 import GatherIntelligence from './GatherIntelligence';
 import BodyGuard from './BodyGuard';
+import DesignGuide from './DesignGuide';
+import AdminDashboard from './AdminDashboard';
+
 
 const App = () => {
   return (
@@ -17,6 +20,8 @@ const App = () => {
         <Route path="/hitman" element={<Hitman />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/bodyguard" element={<BodyGuard />} />
+        <Route path="/design-guide" element={<DesignGuide />} />
+        <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/intel" element={<GatherIntelligence />} />
       </Routes>
     </>

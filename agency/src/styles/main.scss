@@ -23,6 +23,7 @@
 @use './quote-slider';
 @use 'breakpoints';
 
+
 @use 'intel-hero';
 @use 'filter-bar';
 @use 'stat-badges';
@@ -38,7 +39,13 @@
 @use 'testimonial-slider';
 @use 'cta-section';
 
-
+@use 'typography';
+@use 'forms';
+@use 'card';
+@use 'alert';
+@use 'layout';
+@use 'design-guide';
+@use 'admin';
 
 body {
   margin: 0;
