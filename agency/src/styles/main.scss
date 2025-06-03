@@ -10,6 +10,12 @@
 @use './header.scss';
 @use './dropdown.scss';
 
+@use './table';
+@use './avatar';
+@use './button';
+@use './location';
+
+
 body {
   margin: 0;
   font-family: sans-serif;

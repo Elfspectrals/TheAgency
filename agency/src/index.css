@@ -1,24 +1,49 @@
 @charset "UTF-8";
-.titleColor {
-  color: #DC2626;
-  background-color: #424244;
-}
-
 :root {
-  /* Light palette – peut venir de _colors.scss ou _variables.scss */
-  --clr-bg: #ffffff;
-  --clr-surface: #424244;
-  --clr-text: #18181B;
-  --clr-primary: #DC2626;
+  /* Light Theme: Light blue vibe */
+  --clr-bg: #e0f7fa;
+  --clr-surface: #ffffff;
+  --clr-text: #01579b;
+  --clr-primary: #0288d1;
+  /* Button Colors (Light) */
+  --clr-btn-primary: #0288d1;
+  --clr-btn-primary-hover: #0277bd;
+  --clr-btn-warning: #fbc02d;
+  --clr-btn-warning-hover: #f9a825;
+  --clr-btn-hire: #00796b;
+  --clr-btn-hire-hover: #00695c;
+  --clr-btn-xxxxx: #8e24aa;
+  --clr-btn-xxxxx-hover: #7b1fa2;
+  /* Location Colors */
+  --clr-location-text: #01579b;
+  --clr-location-icon: #03a9f4;
+  /* Table hover */
+  --clr-table-hover: rgba(2, 136, 209, 0.1);
 }
 
 [data-theme=dark] {
-  --clr-bg: #18181B;
-  --clr-surface: #242429;
-  --clr-text: #f1f1f1;
-  --clr-primary: #DC2626;
+  /* Dark Theme: Dark slate and vivid accents */
+  --clr-bg: #263238;
+  --clr-surface: #37474f;
+  --clr-text: #eceff1;
+  --clr-primary: #81d4fa;
+  /* Button Colors (Dark) */
+  --clr-btn-primary: #81d4fa;
+  --clr-btn-primary-hover: #4fc3f7;
+  --clr-btn-warning: #ffab40;
+  --clr-btn-warning-hover: #ff9100;
+  --clr-btn-hire: #4db6ac;
+  --clr-btn-hire-hover: #26a69a;
+  --clr-btn-xxxxx: #ba68c8;
+  --clr-btn-xxxxx-hover: #ab47bc;
+  /* Location Colors */
+  --clr-location-text: #11507a;
+  --clr-location-icon: #81d4fa;
+  /* Table hover */
+  --clr-table-hover: rgba(129, 212, 250, 0.15);
 }
 
+/* Utility classes */
 .bg-surface {
   background-color: var(--clr-surface);
 }
@@ -237,6 +262,88 @@ html[data-theme=dark] {
 .dropdown__link:hover, .dropdown__link:focus {
   background: rgba(var(--clr-primary), 0.08); /* léger survol */
   color: var(--clr-primary);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.table thead {
+  background: var(--clr-surface);
+  color: var(--clr-text);
+}
+.table th,
+.table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.table tr:hover {
+  background: var(--clr-table-hover);
+}
+
+.avatar {
+  display: inline-block;
+  object-fit: cover;
+  border: 1px solid red;
+  border-radius: 0.4rem;
+}
+.avatar--rounded {
+  border-radius: 50%;
+}
+.avatar--square {
+  border-radius: 0.4rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  padding: 0.45rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn--primary {
+  background: var(--clr-btn-primary);
+  color: var(--clr-text);
+}
+.btn--primary:hover {
+  background: var(--clr-btn-primary-hover);
+}
+.btn--warning {
+  background: var(--clr-btn-warning);
+  color: var(--clr-text);
+}
+.btn--warning:hover {
+  background: var(--clr-btn-warning-hover);
+}
+.btn--hire {
+  background: var(--clr-btn-hire);
+  color: #fff;
+}
+.btn--hire:hover {
+  background: var(--clr-btn-hire-hover);
+}
+.btn--xxxxx {
+  background: var(--clr-btn-xxxxx);
+  color: #fff;
+}
+.btn--xxxxx:hover {
+  background: var(--clr-btn-xxxxx-hover);
+}
+
+.location {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--clr-location-text);
+}
+.location__icon {
+  color: var(--clr-location-icon);
 }
 
 body {

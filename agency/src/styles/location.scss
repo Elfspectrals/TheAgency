@@ -1,0 +1,11 @@
+.location {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--clr-location-text);
+
+  &__icon {
+    color: var(--clr-location-icon);
+  }
+}

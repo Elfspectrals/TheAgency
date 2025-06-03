@@ -1,19 +1,53 @@
-@use './colors' as *;
-
 :root {
-  /* Light palette – peut venir de _colors.scss ou _variables.scss */
-  --clr-bg: #ffffff;
-  --clr-surface: #{ $greyBGLight }; // variable provided by colors
-  --clr-text: #18181B;
-  --clr-primary: #{ $redHitman };   // variable provided by colors
+  /* Light Theme: Light blue vibe */
+  --clr-bg: #e0f7fa;            // light cyan background
+  --clr-surface: #ffffff;       // surface remains white
+  --clr-text: #01579b;          // dark blue text
+  --clr-primary: #0288d1;       // primary blue
+
+  /* Button Colors (Light) */
+  --clr-btn-primary: #0288d1;
+  --clr-btn-primary-hover: #0277bd;
+  --clr-btn-warning: #fbc02d;
+  --clr-btn-warning-hover: #f9a825;
+  --clr-btn-hire: #00796b;
+  --clr-btn-hire-hover: #00695c;
+  --clr-btn-xxxxx: #8e24aa;
+  --clr-btn-xxxxx-hover: #7b1fa2;
+
+  /* Location Colors */
+  --clr-location-text: #01579b;
+  --clr-location-icon: #03a9f4;
+  
+  /* Table hover */
+  --clr-table-hover: rgba(2, 136, 209, 0.1);
 }
 
 [data-theme='dark'] {
-  --clr-bg: #{ $greyBGDark };
-  --clr-surface: #242429;
-  --clr-text: #f1f1f1;
-  --clr-primary: #{ $redHitman };   // conserve the accent rouge
+  /* Dark Theme: Dark slate and vivid accents */
+  --clr-bg: #263238;
+  --clr-surface: #37474f;
+  --clr-text: #eceff1;
+  --clr-primary: #81d4fa;
+
+  /* Button Colors (Dark) */
+  --clr-btn-primary: #81d4fa;
+  --clr-btn-primary-hover: #4fc3f7;
+  --clr-btn-warning: #ffab40;
+  --clr-btn-warning-hover: #ff9100;
+  --clr-btn-hire: #4db6ac;
+  --clr-btn-hire-hover: #26a69a;
+  --clr-btn-xxxxx: #ba68c8;
+  --clr-btn-xxxxx-hover: #ab47bc;
+
+  /* Location Colors */
+  --clr-location-text: #11507a;
+  --clr-location-icon: #81d4fa;
+  
+  /* Table hover */
+  --clr-table-hover: rgba(129, 212, 250, 0.15);
 }
 
+/* Utility classes */
 .bg-surface   { background-color: var(--clr-surface); }
 .text-primary { color: var(--clr-primary); }

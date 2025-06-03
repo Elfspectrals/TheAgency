@@ -1,0 +1,12 @@
+@use './colors' as *;
+
+
+.avatar {
+  display: inline-block;
+  object-fit: cover;
+  border: 1px solid red;
+  border-radius: 0.4rem;   
+
+  &--rounded { border-radius: 50%; }
+  &--square  { border-radius: 0.4rem; }
+}
