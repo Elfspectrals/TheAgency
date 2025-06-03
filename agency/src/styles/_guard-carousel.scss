@@ -1,8 +1,6 @@
-/* src/scss/_guard-carousel.scss */
-.gcarousel {
-  padding: 3rem 0;
-  text-align: center;
-}
+@use 'breakpoints' as *;
+
+.gcarousel { padding: 3rem 0; text-align: center; }
 
 .gcarousel__track {
   margin-top: 2rem;
@@ -11,12 +9,12 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
-  &::-webkit-scrollbar{display:none;}
+  &::-webkit-scrollbar { display: none; }
 }
 
 .gcard {
-  flex: 0 0 60%;
-  max-width: 14rem;
+  flex: 0 0 80%;                /* mobile default */
+  max-width: 18rem;
   scroll-snap-align: center;
   background: var(--clr-surface);
   padding: 1.5rem 1rem;
@@ -28,7 +26,11 @@
   gap: .75rem;
   cursor: pointer;
   transition: transform .2s, box-shadow .2s;
-  &:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(#000,.15);}
+
+  &:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(#000,.15); }
+
+  @media (min-width: $bp-sm) { flex: 0 0 40%; }
+  @media (min-width: $bp-md) { flex: 0 0 25%; }
 }
 
 .gcard__name { font-weight: 600; }

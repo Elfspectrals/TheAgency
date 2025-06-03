@@ -1,14 +1,15 @@
 /* src/scss/_package-cards.scss */
-.pkg {
-  padding: 3rem 0;
-  text-align: center;
-}
+@use 'breakpoints' as *;
+.pkg { padding: 3rem 0; text-align: center; }
 
 .pkg__grid {
-  margin-top: 2rem;
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+  grid-template-columns: 1fr;   /* mobile */
+
+  @media (min-width: $bp-sm) {
+    grid-template-columns: repeat(auto-fit, minmax(14rem,1fr));
+  }
 }
 
 .pkg__card {

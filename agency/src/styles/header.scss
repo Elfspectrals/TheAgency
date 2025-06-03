@@ -1,6 +1,26 @@
 @use './colors' as *;
 @use './mixins'  as *;
 
+@use 'breakpoints' as *;
+
+/* …tout votre header actuel… */
+
+/* Desktop layout (≥ 768 px) */
+@media (min-width: $bp-md) {
+  .header {
+    &__nav {
+      position: static;
+      transform: none !important;
+      flex-direction: row;
+      height: auto;
+      width: auto;
+      padding: 0;
+    }
+
+    &__burger { display: none; }
+  }
+}
+
 /* ------------------------------------------------------------------
    TOKENS ------------------------------------------------------------------ */
 :root {
@@ -143,4 +163,5 @@ html[data-theme='dark'] {
     backdrop-filter: blur(2px);
     z-index: 40;
   }
+  
 }
