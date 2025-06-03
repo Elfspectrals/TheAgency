@@ -1,26 +1,28 @@
-/* ------------------------------------------------------------------
-   TABLE (s’appuie sur les tokens du thème) ------------------------ */
+@use 'breakpoints' as *;
+
+/* Mobile-first table */
 .table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.95rem;
-  table-layout: fixed;               // force la pleine largeur
+  font-size: .85rem;   /* smaller on phones */
+  table-layout: fixed;
 
-  thead {
-    background: var(--clr-surface);  // header = surface
-    color: var(--clr-text);
-  }
+  thead { background: var(--clr-surface); color: var(--clr-text); }
 
-  th,
-  td {
-    padding: 0.65rem 1rem;
-    border-bottom: 1px solid rgba(#000, 0.08);
+  th, td {
+    padding: .5rem .65rem;
+    border-bottom: 1px solid rgba(#000,.08);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  tr:hover {
-    background: var(--clr-table-hover);  // teinte déclarée dans le thème
+  .hide-sm { display: none; }   /* opt-out columns */
+
+  @media (min-width: $bp-sm) {
+    font-size: .95rem;
+    .hide-sm { display: table-cell; }
   }
+
+  tr:hover { background: var(--clr-table-hover); }
 }

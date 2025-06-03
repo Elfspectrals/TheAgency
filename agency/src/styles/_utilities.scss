@@ -1,1 +1,10 @@
-// utilites.scss
+@use 'breakpoints' as *;
+
+/* Responsive “container” helper */
+@mixin container($max: 1200px) {
+  width: min(100% - 2rem, $max);
+  margin-inline: auto;
+}
+
+/* Replace .width-container class if you like:        */
+/* .width-container { @include container; }           */

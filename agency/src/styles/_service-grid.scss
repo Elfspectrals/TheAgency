@@ -1,13 +1,15 @@
-.svc {
-  padding: 3rem 0;
-  text-align: center;
-}
+@use 'breakpoints' as *;
+
+.svc { padding: 3rem 0; text-align: center; }
 
 .svc__grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));
-  margin-top: 2rem;
+  grid-template-columns: 1fr;   /* mobile */
+
+  @media (min-width: $bp-sm) {
+    grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));
+  }
 }
 
 .svc__card {
