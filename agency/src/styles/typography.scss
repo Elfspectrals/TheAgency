@@ -1,0 +1,46 @@
+// src/styles/typography.scss
+.typography {
+  margin: 0;
+  color: var(--clr-text);
+  
+  &--h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  &--h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  &--h3 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+  
+  &--body {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  &--subtitle {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+  
+  &--caption {
+    font-size: 0.875rem;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}

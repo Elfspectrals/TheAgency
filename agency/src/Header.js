@@ -66,6 +66,24 @@ const Header = () => {
   >
     About&nbsp;Us
   </NavLink>
+  <NavLink
+    to="/about"
+    onClick={closeMenu}
+    className={({ isActive }) =>
+      `header__nav-link ${isActive ? '--active' : ''}`
+    }
+  >
+    About&nbsp;Us
+  </NavLink>
+
+  <Dropdown label="TeacherSection">
+    <Dropdown.Item to="/admin" onClick={closeMenu}>
+      Admin Dashboard
+    </Dropdown.Item>
+    <Dropdown.Item to="/design-guide" onClick={closeMenu}>
+      Design Guide
+    </Dropdown.Item>
+  </Dropdown>
 </nav>
 
 
