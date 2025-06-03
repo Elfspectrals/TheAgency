@@ -1,3 +1,4 @@
+// main.scss
 @use './variables';
 @use './functions';
 @use './mixins';
@@ -5,14 +6,10 @@
 @use './colors';
 @use './sizes';
 @use './borders';
+@use './theme';
+@use './header.scss';
 
-/* Exemple global */
 body {
   margin: 0;
   font-family: sans-serif;
-}
-
-// Use the color of colors.scss for the body background
-body {
-  background-color: colors.$primary;
 }

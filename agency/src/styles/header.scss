@@ -1,0 +1,49 @@
+// _header.scss 
+.header {
+  background: var(--clr-surface);
+  color: var(--clr-text);
+  padding: clamp(0.75rem, 2vw, 1.25rem) 1rem;
+  box-shadow: 0 1px 3px rgba(#000, .15);
+
+  &__container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  &__logo {
+    color: var(--clr-primary);
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover,
+    &:focus { text-decoration: underline; }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 1rem;
+
+    &-link {
+      color: inherit;
+      font-size: 1rem;
+      text-decoration: none;
+      position: relative;
+
+      &.--active,
+      &:hover {
+        color: var(--clr-primary);
+      }
+    }
+  }
+
+  &__toggle {
+    border: none;
+    background: transparent;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1;
+    color: var(--clr-primary);
+
+    &:focus-visible { outline: 2px dashed var(--clr-primary); }
+  }
+}
